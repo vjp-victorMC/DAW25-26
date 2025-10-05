@@ -1,4 +1,4 @@
-let array1 = [5, 2, 4, 4, 55, 11];
+let array1 = [6, 2, 4, 4, 2, 22];
 
 function procesarArray(array) {
     if (array.every(element => isNaN(element))) {
@@ -6,7 +6,7 @@ function procesarArray(array) {
     }
     else {
         let i = 0;
-        array.forEach(function (element, i, array) {
+        array.forEach((element, i, array) => {
             array[i] = element * 2;
             i++;
         })

@@ -1,0 +1,1 @@
+let platoCocina1 = {nombrePlato:""}
