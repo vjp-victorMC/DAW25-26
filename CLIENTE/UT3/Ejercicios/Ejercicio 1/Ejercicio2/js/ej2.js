@@ -30,7 +30,6 @@ let arrayLinkNormal = document.querySelectorAll(".linkNormal");
 
 arrayLinkNormal.forEach(element => console.log(element.getAttribute("title")));
 
-
 // 8
 
 let enlaceSpider = document.querySelector("a[title=Spiderman]");
