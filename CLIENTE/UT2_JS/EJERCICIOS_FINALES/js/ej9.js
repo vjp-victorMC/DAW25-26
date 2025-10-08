@@ -1,29 +1,33 @@
 class PlatoCocina {
-  constructor(nombrePlato, duracionMinutos, dificultad) {
-    this.nombrePlato = nombrePlato;
-    this.duracionMinutos = duracionMinutos;
-    this.dificultad = dificultad;
-  }
-  toString() {
-    return `El plato ${this.nombrePlato} tiene una duración de ${this.duracionMinutos} minutos con dificultad ${this.dificultad}`;
-  }
+    constructor(nombre, duracionMinutos, dificultad) {
+        this.nombre = nombre;
+        this.duracionMinutos = duracionMinutos;
+        this.dificultad = dificultad;
+
+    }
+
+    toString() {
+        return "El plato " + this.nombre + " tiene un duracion de " + this.duracionMinutos + " con dificultad " + this.dificultad
+    }
 }
 
-const cocido = new PlatoCocina('Cocido', 60, 6);
-const tortilla = new PlatoCocina('Tortilla Española', 45, 7);
-const berenjenas = new PlatoCocina('Berenjenas rellenas', 150, 7);
+let mapaPlatos = new Map();
 
-const mapaPlatos = new Map();
-mapaPlatos.set(cocido, ['Garbanzos', 'Sal', 'Patatas', 'Chorizo', 'Zanahorias']);
-mapaPlatos.set(tortilla, ['Huevos', 'Sal', 'Patatas', 'Aceite', 'Cebolla']);
-mapaPlatos.set(berenjenas, ['Berenjenas', 'Carne', 'Aceite', 'Queso', 'Pimientos', 'Tomates', 'Bechamel']);
+mapaPlatos.set(new PlatoCocina("Cocido", "60", 6), ["Sal", "Patatas", "Chorizo", "Zanahorias"]);
+mapaPlatos.set(new PlatoCocina("Tortilla Española", "45", 7), ["Sal", "Patatas", "Aceite", "Cebolla"]);
+mapaPlatos.set(new PlatoCocina("Berenjenas rellenas", "150", 7), ["Carne", "Aceite", "Sal"]);
 
-function imprimirMapaPlatos(mapa) {
-  for (const [plato, ingredientes] of mapa) {
-    console.log(`${plato.toString()}`);
-    console.log('Ingredientes:\n- ' + ingredientes.join('\n- '));
-    console.log('');
-  }
+
+
+function pintarMapa(mapa) {
+    for (let [plato, ingredientesArray] of mapaPlatos) {
+        console.log(plato.toString() + "\nIngredientes: " + ingredientesArray.join("\n"))
+    }
 }
 
-imprimirMapaPlatos(mapaPlatos);
+pintarMapa()
+
+
+
+
+

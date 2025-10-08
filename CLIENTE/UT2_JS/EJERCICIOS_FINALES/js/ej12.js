@@ -1,50 +1,45 @@
 
-const estudiantes = new Map([
-  ['Ana',   [7, 8, 9, 6, 7, 8]],
-  ['Bruno', [5, 6, 7, 6, 5, 6]],
-  ['Carla', [9, 9, 8, 10, 9, 8]],
-  ['Diego', [6, 7, 6, 7, 6, 7]],
-]);
-
-// a) mediaAritmetica con número indeterminado de elementos
-function mediaAritmetica(...nums) {
-  return nums.reduce((acc, n) => acc + n, 0) / nums.length;
+let estudiante1 = {
+    nombre: "Ramón",
+    notas: [1, 2, 5, 6, 5]
+}
+let estudiante2 = {
+    nombre: "Victor",
+    notas: [10, 9, 5, 6, 5]
+}
+let estudiante3 = {
+    nombre: "Maria",
+    notas: [7, 2, 10, 6, 2]
+}
+let estudiante4 = {
+    nombre: "Julia",
+    notas: [1, 8, 5, 3, 10]
 }
 
-// a) Pintar nombre + media de cada estudiante
-function imprimirMedias(mapa) {
-  for (const [nombre, notas] of mapa.entries()) {
-    const media = mediaAritmetica(...notas);
-    console.log(`${nombre}: ${media.toFixed(2)}`);
-  }
+let mapaEstudiantes = new Map();
+
+mapaEstudiantes.set(estudiante1.nombre, estudiante1.notas);
+
+function mediaAritmetica(...notas) {
+    let sumaTotal = notas.reduce((total, nota) => total + nota, 0);
+
+    let media = sumaTotal / notas.length;
+
+    return media;
+
 }
 
-// b) Estudiante con mejor media y su media
-function mejorEstudiante(mapa) {
-  let mejorNombre = null;
-  let mejorMedia = -Infinity;
-  for (const [nombre, notas] of mapa) {
-    const media = mediaAritmetica(...notas);
-    if (media > mejorMedia) {
-      mejorMedia = media;
-      mejorNombre = nombre;
-    }
-  }
-  console.log(`Mejor: ${mejorNombre} con media ${mejorMedia.toFixed(2)}`);
-  return { nombre: mejorNombre, media: mejorMedia };
+function pintarMedia(estudiante) {
+    console.log("Nombre: " + estudiante.nombre);
+    console.log("Media: " + mediaAritmetica(...estudiante.notas))
+    console.log("\n");
 }
 
-// c) Nombres ordenados por media (de mayor a menor)
-function nombresOrdenadosPorMedia(mapa) {
-  const ordenados = [...mapa.entries()]
-    .map(([nombre, notas]) => [nombre, mediaAritmetica(...notas)])
-    .sort((a, b) => b[1] - a[1])
-    .map(([nombre]) => nombre);
-  console.log(ordenados.join(', '));
-  return ordenados;
-}
+pintarMedia(estudiante1);
+pintarMedia(estudiante2);
+pintarMedia(estudiante3);
+pintarMedia(estudiante4);
 
-// Ejecutar
-imprimirMedias(estudiantes);
-mejorEstudiante(estudiantes);
-nombresOrdenadosPorMedia(estudiantes);
+
+
+
