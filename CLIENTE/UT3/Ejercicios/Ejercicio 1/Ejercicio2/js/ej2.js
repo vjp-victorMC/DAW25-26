@@ -34,11 +34,21 @@ arrayLinkNormal.forEach(element => console.log(element.getAttribute("title")));
 
 let enlaceSpider = document.querySelector("a[title=Spiderman]");
 
-console.log(enlaceSpider);
+// console.log(enlaceSpider);
 
-let enlacesHermanos = document.querySelectorAll("a[title=Spiderman] ~ a");
+// let enlacesHermanos = document.querySelectorAll("a[title=Spiderman] ~ a");
 
-enlacesHermanos.forEach(e => console.log("8) " + e.outerHTML));
+// enlacesHermanos.forEach(e => console.log("8) " + e.outerHTML));
+
+while (enlaceSpider = enlaceSpider.nextElementSibling) {
+    console.log("8) " + enlaceSpider.outerHTML);
+}
+
+enlaceSpider = document.querySelector("a[title=Spiderman]");
+
+while (enlaceSpider = enlaceSpider.previousElementSibling) {
+    console.log("8) " + enlaceSpider.outerHTML);
+}
 
 
 
