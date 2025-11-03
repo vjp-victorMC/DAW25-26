@@ -1,5 +1,5 @@
 //TODO: Ejemplo 5: Inicializar la base de datos
-//Abrir una base de datos "Ejemplo" y dentro el almacen "productos"
+//Abrir una base de datos "Ejemplo" y dentro el almacén "productos"
 function openDatabase() {
     return new Promise((resolve, reject) => {
         let openReq = indexedDB.open('Ejemplo', 1); // ¡OJO CON LA VERSIÓN!!!
