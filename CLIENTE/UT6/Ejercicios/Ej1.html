@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej 1.2</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <!-- Modal HTML -->
+    <div id="miModal" style="display:none;">
+        <div class="modal-contenido">
+            <span id="cerrarModal">&times;</span>
+            <p>¡Esto es una ventana superpuesta!</p>
+        </div>
+    </div>
+
+    <style>
+        /* Estilos para el modal */
+        #miModal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-contenido {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        #cerrarModal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+    </style>
+
+    <script>
+        // Mostrar el modal
+        function mostrarModal() {
+            document.getElementById('miModal').style.display = 'flex';
+        }
+        // Cerrar el modal
+        document.getElementById('cerrarModal').onclick = function () {
+            document.getElementById('miModal').style.display = 'none';
+        };
+    </script>
+
+    <!-- Botón para abrir el modal -->
+    <button onclick="mostrarModal()">Abrir ventana superpuesta</button>
+
+    <h1>PRUEBA COOKIES</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia magni eaque aperiam id, itaque praesentium
+        suscipit deserunt accusantium aut cum nesciunt veritatis, obcaecati, quasi facilis porro perferendis
+        voluptate
+        quas labore fugiat esse aliquam. Aliquam, quae quo? Blanditiis quaerat id quibusdam, dolores hic numquam
+        officiis, consectetur a praesentium sit, quos sed?º</p>
+    <script defer src="js/ej1_2.js"></script>
+</body>
+
+</html>

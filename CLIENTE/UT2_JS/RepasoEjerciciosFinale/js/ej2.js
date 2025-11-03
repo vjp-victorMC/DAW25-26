@@ -12,5 +12,4 @@ function esPalindromo(cadena1, cadena2) {
         console.log((cadena2 === cadenaInvertida) ? "Son iguales" : "No son iguales")
     }
 }
-
 esPalindromo("esac", "case");
