@@ -13,4 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
         div.innerText = "Ancho: " + window.innerWidth + "\n";
         div.innerText += "Altura: " + window.innerHeight;
     })
+    window.onbeforeunload = function () {
+        return "Se cierra con un mensaje"
+    }
 })
+
+

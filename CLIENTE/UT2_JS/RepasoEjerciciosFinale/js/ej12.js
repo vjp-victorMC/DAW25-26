@@ -4,8 +4,8 @@ let estudiante1 = {
     notas: [1, 2, 5, 6, 5]
 }
 let estudiante2 = {
-    nombre: "Joaquin",
-    notas: [10, 9, 10, 6, 5]
+    nombre: "Victor",
+    notas: [10, 9, 5, 6, 5]
 }
 let estudiante3 = {
     nombre: "Maria",
@@ -74,6 +74,7 @@ function ordenarEstudiantes(mapaEstudiantes) {
 
     arrayEstudiantes.sort((a, b) => b[1] - a[1]);
 
+    let estudiantesOrdenados = new Map(arrayEstudiantes);
 }
 
 ordenarEstudiantes(mapaEstudiantes);
